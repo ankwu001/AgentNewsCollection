@@ -1,0 +1,20 @@
+{
+  "min_content_length": 20,
+  "max_content_length": 50000,
+  "exclude_authors": [
+    "AutoModerator",
+    "[deleted]"
+  ],
+  "exclude_title_patterns": [
+    "^\\[hiring\\]",
+    "^\\[job\\]",
+    "^weekly discussion thread",
+    "^daily simple questions"
+  ],
+  "exclude_content_patterns": [
+    "this post was generated automatically",
+    "i am a bot"
+  ],
+  "min_score_reddit": 1,
+  "min_stars_github": 0
+}

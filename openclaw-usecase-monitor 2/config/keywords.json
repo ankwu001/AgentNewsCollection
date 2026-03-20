@@ -1,0 +1,42 @@
+{
+  "core": [
+    "openclaw",
+    "open-claw",
+    "open claw",
+    "龙虾"
+  ],
+  "usecase": [
+    "openclaw use case",
+    "openclaw usecase",
+    "openclaw tutorial",
+    "openclaw example",
+    "openclaw demo",
+    "built with openclaw"
+  ],
+  "agent_tech": [
+    "openclaw agent",
+    "openclaw mcp",
+    "openclaw plugin",
+    "openclaw api",
+    "openclaw workflow",
+    "openclaw automation",
+    "openclaw coding agent",
+    "openclaw tool use"
+  ],
+  "comparison": [
+    "openclaw vs cursor",
+    "openclaw vs copilot",
+    "openclaw vs claude code",
+    "openclaw vs windsurf",
+    "openclaw alternative"
+  ],
+  "exclude_patterns": [
+    "hiring",
+    "job opening",
+    "we are looking for",
+    "sponsored",
+    "advertisement",
+    "ad:",
+    "promo:"
+  ]
+}

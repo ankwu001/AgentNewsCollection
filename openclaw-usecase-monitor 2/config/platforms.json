@@ -1,0 +1,46 @@
+{
+  "reddit": {
+    "enabled": true,
+    "method": "api",
+    "subreddits": [
+      {"name": "openclaw", "keyword_filter": false},
+      {"name": "openclaw_usecase", "keyword_filter": false},
+      {"name": "LocalLLaMA", "keyword_filter": true},
+      {"name": "artificial", "keyword_filter": true},
+      {"name": "machinelearning", "keyword_filter": true}
+    ],
+    "sort_modes": ["new", "hot"],
+    "max_per_subreddit": 100,
+    "lookback_hours": 24
+  },
+  "github": {
+    "enabled": true,
+    "method": "api",
+    "search_targets": ["repositories", "issues", "discussions"],
+    "official_repos": [
+      "openclaw/openclaw"
+    ],
+    "max_results_per_query": 50,
+    "lookback_hours": 24
+  },
+  "x": {
+    "enabled": true,
+    "method": "playwright",
+    "max_results": 50,
+    "lookback_hours": 24,
+    "request_delay_range": [2, 5],
+    "keyword_groups": ["core", "usecase", "agent_tech"]
+  },
+  "discord": {
+    "enabled": true,
+    "method": "playwright",
+    "servers": [
+      {
+        "name": "OpenClaw Official",
+        "channels": ["use-cases", "showcase", "general"]
+      }
+    ],
+    "lookback_hours": 24,
+    "request_delay_range": [2, 5]
+  }
+}

@@ -1,0 +1,58 @@
+name: Daily OpenClaw Use Case Scrape
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+env:
+  REDDIT_CLIENT_ID: ${{ secrets.REDDIT_CLIENT_ID }}
+  REDDIT_CLIENT_SECRET: ${{ secrets.REDDIT_CLIENT_SECRET }}
+  GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+  MINIMAX_API_KEY: ${{ secrets.MINIMAX_API_KEY }}
+  X_COOKIES: ${{ secrets.X_COOKIES }}
+  DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
+
+jobs:
+  scrape-and-report:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Cache pip dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          playwright install chromium
+          playwright install-deps
+
+      - name: Run scrapers
+        run: python -m src.scrapers.run_all
+        continue-on-error: true
+
+      - name: Process and deduplicate
+        run: python -m src.processors.run_pipeline
+
+      - name: Generate daily report
+        run: python -m src.report_generator
+
+      - name: Commit and push results
+        run: |
+          git config user.name "openclaw-bot"
+          git config user.email "bot@openclaw-monitor"
+          git add data/ outputs/ memory/
+          git diff --cached --quiet || git commit -m "daily: $(date -u +%Y-%m-%d) scrape + report"
+          git push

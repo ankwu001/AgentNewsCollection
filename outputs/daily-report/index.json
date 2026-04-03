@@ -1,6 +1,13 @@
 {
-  "latest": "2026-04-02",
+  "latest": "2026-04-03",
   "reports": [
+    {
+      "date": "2026-04-03",
+      "file": "2026-04-03.md",
+      "total_items": 224,
+      "valid_items": 200,
+      "top_category": "ai-coding"
+    },
     {
       "date": "2026-04-02",
       "file": "2026-04-02.md",

@@ -1,6 +1,13 @@
 {
-  "latest": "2026-05-04",
+  "latest": "2026-05-05",
   "reports": [
+    {
+      "date": "2026-05-05",
+      "file": "2026-05-05.md",
+      "total_items": 0,
+      "valid_items": 0,
+      "top_category": "none"
+    },
     {
       "date": "2026-05-04",
       "file": "2026-05-04.md",

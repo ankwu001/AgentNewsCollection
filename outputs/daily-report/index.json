@@ -1,6 +1,13 @@
 {
-  "latest": "2026-09-14",
+  "latest": "2026-09-15",
   "reports": [
+    {
+      "date": "2026-09-15",
+      "file": "2026-09-15.md",
+      "total_items": 0,
+      "valid_items": 0,
+      "top_category": "none"
+    },
     {
       "date": "2026-09-14",
       "file": "2026-09-14.md",
@@ -620,13 +627,6 @@
     {
       "date": "2026-06-17",
       "file": "2026-06-17.md",
-      "total_items": 0,
-      "valid_items": 0,
-      "top_category": "none"
-    },
-    {
-      "date": "2026-06-16",
-      "file": "2026-06-16.md",
       "total_items": 0,
       "valid_items": 0,
       "top_category": "none"

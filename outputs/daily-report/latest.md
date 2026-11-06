@@ -1,4 +1,4 @@
-# OpenClaw Use Case Daily Report — 2026-11-05
+# OpenClaw Use Case Daily Report — 2026-11-06
 
 > **今日概览**
 > - 共抓取 0 条内容，筛选出 0 条有效 use case
